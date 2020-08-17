@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="45 mb-3">
+        <h2>第45關</h2>
+        <button class="google btn btn-outline-primary mt-2 mr-3">連到 Google</butt>
+        <button class="yahoo btn btn-outline-danger mt-2">連到 Yahoo</button>
+    </div>
+    <script src="https://gist.github.com/Lu-ber/55ced76ce0206b06d209aaa651969f9b.js"></script>
+    <div class="46 mt-5 mb-3">
+        <h2>第46-1關</h2>
+        <button class="Tom btn btn-outline-primary mt-2 mr-3" data-id="tom">Tom 推薦六角學院</button>
+        <button class="John btn btn-outline-danger mt-2" data-id="John">John 推薦六角學院</button>
+        </br><br>
+        <script src="https://gist.github.com/Lu-ber/def66f055df72a1744bc5a8aaba752ef.js"></script>
+        <h2>第46-2關</h2>
+        <p>取出此網頁 'https://www.hexschool.com/?recommend=tom' 中的 'tom'</p>
+        <script src="https://gist.github.com/Lu-ber/a51227c5ecc77b9a1ab5b34bf6f06803.js"></script>
+    </div>
+
+
+
+    <script>
+        // 第45關
+        let google = document.querySelector('.google');
+        let yahoo = document.querySelector('.yahoo');
+        google.addEventListener('click', open45);
+        yahoo.addEventListener('click', open45);
+
+        function open45() {
+            // console.log(e.target.classList)
+            let bt = this.classList;
+            if (bt.contains('google')) {
+                // console.log(5)
+                location.href = "https://www.google.com";
+            } else if (bt.contains('yahoo')) {
+                location.href = "https://www.yahoo.com";
+                // console.log(6)
+            }
+        }
+
+
+        //第46-1關
+        let Tom = document.querySelector('.Tom');
+        let John = document.querySelector('.John');
+        const hex = 'https://www.hexschool.com/';
+        Tom.addEventListener('click', open46);
+        John.addEventListener('click', open46);
+
+        function open46() {
+            // console.log(e.target.classList)
+            // console.log(this.getAttribute('data-id'))
+            let bt = this.classList;
+            if (bt.contains('Tom')) {
+                location.href = `${hex}?recommend=${this.getAttribute('data-id')}`;
+            } else if (bt.contains('John')) {
+                location.href = `${hex}?recommend=${this.getAttribute('data-id')}`;
+            }
+        }
+
+
+        // 第46-2關
+        // location.search.split('=')[1];
+    </script>
+</body>
+
+</html>
